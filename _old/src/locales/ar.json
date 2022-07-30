@@ -1,0 +1,7 @@
+{
+				"bot": {
+								"missing_permissions": {
+												"description": "احتاج الى الاذونات التالية : \n%s"
+								}
+				}
+}
