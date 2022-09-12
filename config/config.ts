@@ -12,6 +12,11 @@ const config = {
 
     prefix: `~`,
 
+    tickets: {
+        max: 1,
+        limitByCategory: true
+    },
+
     version,
     footer: `© AtlasMC | v${version}`
 };

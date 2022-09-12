@@ -1,13 +1,14 @@
 import Discord, { GatewayIntentBits, Partials } from 'discord.js';
+import * as dotenv from 'dotenv';
 
-import { Client } from './typings/discord';
 import * as loader from './modules/loader';
 
 import log from './utils/log';
 import * as logExtra from './utils/logExtra';
 import deployCommands from './utils/deployCommands';
 
-import * as dotenv from 'dotenv';
+import { Client } from './typings/discord';
+
 dotenv.config();
 
 const client: Client = new Discord.Client({
@@ -29,6 +30,8 @@ const main = async (): Promise<void> => {
 
     await loader.loadCommands(client);
     await loader.loadEvents(client);
+
+    // await loader.loadTickets(client);
 
     if (process.env.NODE_ENV === `development`) {
         logExtra.logHeader();

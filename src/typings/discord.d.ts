@@ -1,5 +1,6 @@
 import * as Discord from 'discord.js';
 import { SlashCommandBuilder } from '@discordjs/builders';
+import TicketManager from '../modules/TicketManager';
 
 interface Command {
     cmd: SlashCommandBuilder
@@ -13,6 +14,8 @@ interface Event {
 interface Client extends Discord.Client {
     commands?: Map<string, Command>
     events?: Map<string, Event>
+
+    tickets?: TicketManager
 }
 
 export {
